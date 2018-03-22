@@ -90,6 +90,10 @@
   #   uid = 1000;
   # };
 
+  # Increase per-user tmpdir size (/run/user/$UID)
+  # Without this GHC fails to compile some packages
+  services.logind.extraConfig= "RuntimeDirectorySize=4G"
+
   # This value determines the NixOS release with which your system is to be
   # compatible, in order to avoid breaking some software such as database
   # servers. You should change this only after NixOS release notes say you
