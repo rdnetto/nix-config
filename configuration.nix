@@ -44,6 +44,7 @@
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
     wget neovim mosh tmux git zsh ripgrep fasd moreutils pv
+    nix-index docker
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -92,7 +93,7 @@
 
   # Increase per-user tmpdir size (/run/user/$UID)
   # Without this GHC fails to compile some packages
-  services.logind.extraConfig= "RuntimeDirectorySize=4G"
+  services.logind.extraConfig= "RuntimeDirectorySize=4G";
 
   # This value determines the NixOS release with which your system is to be
   # compatible, in order to avoid breaking some software such as database
@@ -100,4 +101,7 @@
   # should.
   system.stateVersion = "17.09"; # Did you read the comment?
 
+
+  virtualisation.docker.enable = true;
+  users.users.root.extraGroups = ["docker"];
 }
