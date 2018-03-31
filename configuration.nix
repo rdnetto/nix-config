@@ -53,6 +53,9 @@
   # programs.mtr.enable = true;
   # programs.gnupg.agent = { enable = true; enableSSHSupport = true; };
 
+  # Without this line, PATH will not be set correctly
+  programs.zsh.enable = true;
+
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
@@ -62,7 +65,6 @@
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC/jW6mek+KOPMvD4eH63mFCMRHKf7DZZSmjhITD6Qx9jYncBhBWytl0BoSNSNifUKTeIS/HHqnHj4BNjKdqOEIuly5GyskUUg9Y9F2rBjvblO7mKnEdRt3tAbP/yZwWhoi+YNbJ13/1yIrWNQxr4LU1LXL2yPKEmtIcCEa/910xBU2D0SSYJZWrQiWohbXeAsg2fqGU/MvWKNppUo4Ymo04ZRZAIt3TET2ehUhrL7EXWdz84wEHYFYZ6HbaXHOEyO2y6kK9r9I3EsAapXB5r6I6MBYJJ2jlwEs6jpujLfAHkvWFKbEeJWW5fxtweq/6GDq+jSTfoEIhGr5PvJUNTrJ reuben@phenom"
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDGhNuzkIv1X6bilLRxx4PmgTn0Dy0i69Yx9QsykMOvYSssxweX8Et7jreQ6gZd+DJ52FHTkgtwBK7haD+kbe2SFFvFuzF4aRGhtf5XxJGZK10my9ZQbUYA2Je/JEGBrNvzpNqbHp8a058RoWmPvFSsVAQc8rY7W92jfboOuuoj3cvgPyiLVLSVdq0ktmv07UdYrmL8hb1QVFQEI9jV9yoVKycQQ2MUCO1F6K8qSPQ4Ttb9E+DwQ7BrULrLeq1zHRw7HXdwYwG5iMbklXxrX/lwxKNByoXLAUX9LFjo1oaeYC6UGXrcnuStAN8gsOGlScLn9OzfM/aNosZ7yT+d/YCp reuben@yuki"
 ];
-
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
