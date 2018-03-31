@@ -44,7 +44,7 @@
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
     wget neovim mosh tmux git zsh ripgrep fasd moreutils pv
-    nix-index docker file tig
+    nix-index docker file tig psmisc
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
