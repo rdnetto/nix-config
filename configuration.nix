@@ -66,11 +66,16 @@
     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDGhNuzkIv1X6bilLRxx4PmgTn0Dy0i69Yx9QsykMOvYSssxweX8Et7jreQ6gZd+DJ52FHTkgtwBK7haD+kbe2SFFvFuzF4aRGhtf5XxJGZK10my9ZQbUYA2Je/JEGBrNvzpNqbHp8a058RoWmPvFSsVAQc8rY7W92jfboOuuoj3cvgPyiLVLSVdq0ktmv07UdYrmL8hb1QVFQEI9jV9yoVKycQQ2MUCO1F6K8qSPQ4Ttb9E+DwQ7BrULrLeq1zHRw7HXdwYwG5iMbklXxrX/lwxKNByoXLAUX9LFjo1oaeYC6UGXrcnuStAN8gsOGlScLn9OzfM/aNosZ7yT+d/YCp reuben@yuki"
 ];
 
-  # Open ports in the firewall.
+  # Open ports in the firewall. (SSH is implicitly allowed by default.)
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
+  networking.firewall.allowedUDPPortRanges = [
+    # Needed for mosh
+    { from = 60000; to = 61000; }
+  ];
+  networking.firewall.allowPing = true;
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
